@@ -1,18 +1,19 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { Link, RouterProvider, createHashRouter } from "react-router-dom"
+import { Link, RouterProvider, createHashRouter, Outlet } from "react-router-dom"
 import App from "./App"
+import Pokemons from "./Pokemons"
 
 const router = createHashRouter([
     {
         path: "/",
-        element: 
-        <>
-            <nav>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-            </nav>
-        </>
+        element: <App/>,
+        children:[
+            {
+                path: "/:pageId",
+                element: <Pokemons/>
+            }
+        ] 
     },
     {
         path: "/about",
@@ -22,8 +23,7 @@ const router = createHashRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-    <RouterProvider router={router}/>
-    // <React.StrictMode>
-    //     <App />
-    // </React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider router={router}/>
+    </React.StrictMode>
 )

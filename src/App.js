@@ -1,11 +1,13 @@
+import { Outlet, Link } from 'react-router-dom';
+
 export default function MainScreen(){
-    return(
-        <ul>
-        {[0,1,2].map(story => (
-            <li key={story}>
-            {story}
-            </li>
-        ))}
-        </ul>
+    return( 
+            <>
+                <nav>
+                    <Link to="/">Home</Link>
+                    <Link to="/1">1</Link>
+                </nav>
+                <Outlet/>
+            </>
     )
 }
