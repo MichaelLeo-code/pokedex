@@ -11,25 +11,36 @@ export default function Pokemons(){
     useEffect(() => {
         let ignore = false
 
+        // const urls = fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
+        //                 .then(response => response.json())
+        //                 .then(pokemons => pokemons.results.map(p => p.url))
+
+        // console.log(urls)
+
         fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0")
             .then(response => response.json())
+            .then(pokemons => pokemons.results.map(p => p.url))
+            .then(urls => {
+                return Promise.all(urls.map(url => fetch(url).then(r => r.json())))
+            })
             .then(p => {
-                if (!ignore) setPokemons(p.results)
+                if (!ignore) setPokemons(p)
             })
 
         return () => (ignore = true)
     }, [])
 
-    if(pokemons) console.log(pokemons.map((p, i)=> (
-        p
-    )))
+    if(pokemons) console.log(pokemons)
+    // if(pokemons) console.log(pokemons.map((p, i)=> (
+    //     p
+    // )))
 
     return(
       <>
-        {/* {
+        {
             pokemons && pokemons.map((p, i) => (
             <PokemonCard key={i} pokemon={p}/>
-        ))} */}
+        ))}
         {/* <PokemonCard pokemon={pokemon}/> */}
         <PageButtons pageId={parseInt(pageId)}/>
       </>  
