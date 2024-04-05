@@ -1,0 +1,50 @@
+.pokemon_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    /* height: 100vh; */
+    color: white;
+    margin: 8px;
+}
+
+.my_card{
+    min-width: 104px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: scale 0.2s ease-in-out;
+}
+
+.hover_effect{
+    /* width: auto; */
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.hover_effect:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
+
+.full-screen{
+    position: fixed;
+    top: 200px;
+    /*left: 0; */
+    /* min-width: 312px; */
+    scale: 3;
+    /* height: 70%; */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    z-index: 3;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    /* pointer-events: none; */
+}

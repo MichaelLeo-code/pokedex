@@ -1,6 +1,6 @@
 export function getPokemonColor(type) {
     const typeColors = {
-        "normal": "#E6E6E6",
+        "normal": "#D2D1CF",
         "fire": "#EE8130",
         "water": "#6390F0",
         "electric": "#F7D02C",
