@@ -4,6 +4,7 @@ import { RouterProvider, createHashRouter, Navigate } from "react-router-dom"
 import App from "./App"
 import Pokemons from "./Pokemons"
 import Test from "./i_tried_but_too_tired"
+import './styles.css'; 
 
 const router = createHashRouter([
     {
