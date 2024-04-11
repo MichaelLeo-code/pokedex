@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    position: relative;
+    width: 100vh;
+    height: 90vh;
+    margin: 20px;
+    padding: 0 !important;
+  }
+  
+  .gpt-card {
+    min-width: 150px;
+    max-height: 100px;  
+    margin: 20px;
+
+    background-color: rgb(88, 177, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .selected-card {
+    position: absolute;
+    height: 100px;  
+    
+    display: flex;
+    justify-content: center;
+    top: 36%;
+    width: 150px;
+    background-color: lightcoral;
+    align-items: center;
+  }
+  
+  .selected-card{
+    position: absolute;
+    height: 100px;  
+    
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    top: 36%;
+    width: 150px;
+    background-color: lightcoral;
+    align-items: center;
+    transition: left 0.5s ease;
+  }
